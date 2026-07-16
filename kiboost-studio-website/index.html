@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KI Boost Studio – Mehr Anfragen für dein Kosmetikstudio</title>
+<meta name="description" content="KI Boost Studio übernimmt Content, Social Media und Sichtbarkeit für dein Kosmetikstudio – planbar mehr Anfragen bei ca. 30 Minuten Aufwand im Monat.">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0A0C;
+  --panel:#131316;
+  --panel-2:#1A1A1F;
+  --line:#26262C;
+  --text:#F2EEE4;
+  --muted:#98928A;
+  --gold:#E4B95B;
+  --gold-deep:#B98A2F;
+  --gold-tint:rgba(228,185,91,.12);
+  --green:#6FCF97;
+  --green-bg:#15291E;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--bg);color:var(--text);
+  font-size:16px;line-height:1.55;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:'Sora',sans-serif;font-weight:700;letter-spacing:-.01em}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+
+/* ---------- Header ---------- */
+header{
+  position:sticky;top:0;z-index:40;
+  background:rgba(10,10,12,.85);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.logo{font-family:'Sora',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:.03em}
+.logo b{color:var(--gold)}
+.nav-links{display:flex;gap:26px;align-items:center;list-style:none}
+.nav-links a{font-size:.88rem;font-weight:500;color:var(--muted);transition:color .15s}
+.nav-links a:hover{color:var(--text)}
+.navbtn{display:none;background:none;border:1px solid var(--line);border-radius:9px;color:var(--text);width:40px;height:40px;font-size:1.1rem}
+
+button,.btn,.btn2{font:inherit;cursor:pointer;border:none;border-radius:10px;font-weight:600}
+.btn{background:var(--gold);color:#171204;padding:13px 22px;display:inline-block;text-decoration:none;transition:background .15s,transform .15s}
+.btn:hover{background:#EFC96F;transform:translateY(-1px)}
+.btn2{background:var(--panel-2);color:var(--text);padding:13px 22px;border:1px solid var(--line);display:inline-block;text-decoration:none}
+.btn2:hover{border-color:var(--muted)}
+.btn.small{padding:9px 16px;font-size:.85rem}
+
+/* ---------- Hero ---------- */
+.hero{padding:76px 0 60px;position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:-20% -10% auto -10%;height:600px;
+  background:radial-gradient(60% 60% at 50% 0%, rgba(228,185,91,.14), transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:500;padding:7px 14px;border-radius:99px;background:var(--green-bg);color:var(--green);margin-bottom:20px}
+.pill::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green)}
+.hero h1{font-size:clamp(2.1rem,4.2vw,3.15rem);line-height:1.12;margin-bottom:20px}
+.hero h1 span{color:var(--gold)}
+.hero p.lead{font-size:1.05rem;color:#CFC7B6;max-width:520px;margin-bottom:28px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.hero-note{font-size:.82rem;color:var(--muted)}
+.hero-card{
+  background:linear-gradient(135deg,#1C1608,#131316 60%);
+  border:1px solid var(--gold-deep);border-radius:var(--radius);padding:26px;
+}
+.hero-card .stat{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(228,185,91,.15)}
+.hero-card .stat:last-child{border-bottom:none}
+.hero-card .stat .k{color:var(--muted);font-size:.85rem}
+.hero-card .stat .v{font-family:'Sora',sans-serif;font-weight:700;color:var(--gold)}
+
+/* ---------- Sections ---------- */
+section{padding:70px 0}
+.section-head{max-width:640px;margin:0 auto 44px;text-align:center}
+.section-head h2{font-size:clamp(1.6rem,3vw,2.1rem);margin:10px 0 14px}
+.section-head p{color:var(--muted);font-size:.98rem}
+
+/* Problems */
+.problems{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.problem{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.problem .ico{font-size:1.4rem;margin-bottom:12px}
+.problem h3{font-size:1.02rem;margin-bottom:8px}
+.problem p{color:var(--muted);font-size:.9rem}
+
+/* Offer */
+.offer-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:stretch}
+.offer-card{background:var(--panel);border:1px solid var(--gold-deep);border-radius:var(--radius);padding:32px}
+.offer-price{display:flex;align-items:baseline;gap:8px;margin:6px 0 20px}
+.offer-price .num{font-family:'Sora',sans-serif;font-weight:800;font-size:2.6rem;color:var(--gold)}
+.offer-price .per{color:var(--muted);font-size:.9rem}
+.offer-list{list-style:none;display:grid;gap:12px;margin-bottom:26px}
+.offer-list li{display:flex;gap:10px;font-size:.95rem}
+.offer-list li::before{content:"✔";color:var(--gold);font-weight:700}
+.offer-terms{font-size:.82rem;color:var(--muted)}
+.magnet-card{background:var(--panel-2);border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;justify-content:space-between}
+.magnet-card h3{font-size:1.1rem;margin-bottom:10px}
+.magnet-card p{color:var(--muted);font-size:.92rem;margin-bottom:20px}
+
+/* Process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.step .n{font-family:'Sora',sans-serif;font-weight:800;color:var(--gold);font-size:1.3rem;margin-bottom:10px}
+.step h3{font-size:.98rem;margin-bottom:6px}
+.step p{color:var(--muted);font-size:.85rem}
+
+/* FAQ */
+.faq{max-width:760px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item summary{list-style:none;cursor:pointer;padding:18px 4px;font-weight:600;font-size:.98rem;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";color:var(--gold);font-size:1.3rem;flex:none}
+.faq-item[open] summary::after{content:"–"}
+.faq-item p{padding:0 4px 18px;color:#CFC7B6;font-size:.92rem;line-height:1.6}
+
+/* Contact */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.contact-info h2{margin-bottom:14px}
+.contact-info p{color:var(--muted);margin-bottom:18px;max-width:420px}
+.contact-info .chan{display:flex;gap:10px;align-items:center;margin-bottom:10px;font-size:.92rem}
+.contact-info .chan b{color:var(--gold)}
+form{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:grid;gap:14px}
+form label{font-size:.8rem;color:var(--muted);margin-bottom:6px;display:block}
+input,textarea{
+  width:100%;font:inherit;color:var(--text);background:var(--panel-2);
+  border:1px solid var(--line);border-radius:9px;padding:11px 13px;outline:none;
+}
+input:focus,textarea:focus{border-color:var(--gold)}
+textarea{min-height:100px;resize:vertical}
+.form-msg{font-size:.85rem;color:var(--green);display:none}
+.form-msg.show{display:block}
+
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:.82rem}
+.footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .problems{grid-template-columns:1fr}
+  .offer-wrap{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .contact-wrap{grid-template-columns:1fr}
+  .nav-links{position:fixed;top:64px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;padding:16px 24px;gap:16px;display:none}
+  .nav-links.open{display:flex}
+  .navbtn{display:block}
+}
+@media (max-width:560px){.steps{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">KI <b>BOOST STUDIO</b></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#angebot">Angebot</a></li>
+      <li><a href="#ablauf">Ablauf</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#kontakt" class="btn small">Potenzialanalyse sichern</a></li>
+    </ul>
+    <button class="navbtn" id="navToggle" aria-label="Menü öffnen">☰</button>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="pill">Kostenlose Potenzialanalyse · unverbindlich</span>
+      <h1>Mehr Anfragen für dein Kosmetikstudio – <span>mit KI-gestützter Sichtbarkeit</span></h1>
+      <p class="lead">Wir übernehmen Content-Planung, Reels, Profil-Optimierung und ein Anfrage-System für dein Studio. Dein Aufwand: ca. 30 Minuten im Monat. Den Rest machen wir.</p>
+      <div class="hero-ctas">
+        <a href="#kontakt" class="btn">Kostenlose Potenzialanalyse anfragen</a>
+        <a href="#angebot" class="btn2">Angebot ansehen</a>
+      </div>
+      <div class="hero-note">Monatlich kündbar · keine Vertragsbindung · Start ohne Risiko</div>
+    </div>
+    <div class="hero-card">
+      <h3 style="margin-bottom:14px">Was du bekommst</h3>
+      <div class="stat"><span class="k">Content-Planung</span><span class="v">1× im Monat</span></div>
+      <div class="stat"><span class="k">Reels &amp; Storys</span><span class="v">produziert</span></div>
+      <div class="stat"><span class="k">Anfrage-System</span><span class="v">eingerichtet</span></div>
+      <div class="stat"><span class="k">Google &amp; Instagram</span><span class="v">optimiert</span></div>
+      <div class="stat"><span class="k">Dein Aufwand</span><span class="v">~30 Min./Monat</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROBLEME ===== -->
+<section id="problem">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Kennst du das?</span>
+      <h2>Gute Behandlungen – aber online zu wenig sichtbar</h2>
+      <p>Viele Kosmetikstudios haben ein starkes Angebot, aber wenig Zeit für Social Media und Online-Sichtbarkeit.</p>
+    </div>
+    <div class="problems">
+      <div class="problem">
+        <div class="ico">📱</div>
+        <h3>Wenig Reels &amp; Storys</h3>
+        <p>Das Profil zeigt nicht, wie gut die Behandlungen wirklich sind – Interessentinnen springen ab.</p>
+      </div>
+      <div class="problem">
+        <div class="ico">⭐</div>
+        <h3>Kaum Google-Bewertungen</h3>
+        <p>Ohne Sichtbarkeit bei Google entscheiden sich potenzielle Kundinnen für die Konkurrenz nebenan.</p>
+      </div>
+      <div class="problem">
+        <div class="ico">📅</div>
+        <h3>Kein einfaches Buchungssystem</h3>
+        <p>Anfragen versanden in DMs oder am Telefon, statt automatisch zu Terminen zu werden.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ANGEBOT ===== -->
+<section id="angebot" style="background:var(--panel-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Das Angebot</span>
+      <h2>Das KI Sichtbarkeits-Paket</h2>
+      <p>Ein Paket, das Content, Sichtbarkeit und Anfragen für dein Studio übernimmt – klar kalkulierbar.</p>
+    </div>
+    <div class="offer-wrap">
+      <div class="offer-card">
+        <span class="eyebrow">KI Sichtbarkeits-Paket</span>
+        <div class="offer-price"><span class="num">499&nbsp;€</span><span class="per">/ Monat</span></div>
+        <ul class="offer-list">
+          <li>Content-Planung für den ganzen Monat</li>
+          <li>Reels &amp; Storys, die zu deinem Studio passen</li>
+          <li>Anfrage-System: Interessentinnen werden automatisch zu Terminen</li>
+          <li>Profil-Optimierung (Instagram &amp; Google Business)</li>
+          <li>Mehr Sichtbarkeit bei Google in deiner Stadt</li>
+        </ul>
+        <a href="#kontakt" class="btn">Jetzt Potenzialanalyse anfragen</a>
+        <p class="offer-terms" style="margin-top:14px">Monatlich kündbar · Einstieg über die kostenlose Potenzialanalyse · kein Risiko</p>
+      </div>
+      <div class="magnet-card">
+        <div>
+          <span class="eyebrow">Lead-Magnet</span>
+          <h3 style="margin-top:10px">Kostenlose Potenzialanalyse</h3>
+          <p>Wir schauen uns Instagram-Profil, Google-Eintrag und Buchungsweg deines Studios an und schicken dir 3 konkrete Punkte, die du sofort verbessern kannst – mit kurzer Begründung.</p>
+        </div>
+        <div>
+          <p style="color:var(--muted);font-size:.85rem;margin-bottom:14px">Dauer für dich: 0 Minuten. Kosten: 0 €. Danach entscheidest du, ob wir mehr daraus machen.</p>
+          <a href="#kontakt" class="btn2">Kostenlos anfragen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABLAUF ===== -->
+<section id="ablauf">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">So läuft es ab</span>
+      <h2>Von der Analyse zum ersten Ergebnis</h2>
+      <p>Ein klarer Onboarding-Prozess sorgt für Qualität ab dem ersten Tag.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h3>Kickoff-Call</h3><p>30 Minuten: Ziele, Tonalität und No-Gos deines Studios klären.</p></div>
+      <div class="step"><div class="n">02</div><h3>Content-Plan</h3><p>Plan für Monat 1 erstellen und mit dir freigeben lassen.</p></div>
+      <div class="step"><div class="n">03</div><h3>Umsetzung</h3><p>Profil-Optimierung, erste Reels &amp; Storys, Anfrage-System einrichten.</p></div>
+      <div class="step"><div class="n">04</div><h3>Ergebnis-Update</h3><p>Nach 14 Tagen bekommst du dein erstes Ergebnis-Update.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" style="background:var(--panel-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Häufige Fragen</span>
+      <h2>Fragen, die uns oft gestellt werden</h2>
+    </div>
+    <div class="faq">
+      <details class="faq-item" open>
+        <summary>499 € ist mir zu teuer.</summary>
+        <p>Verständlich – deshalb rechnen wir kurz: Eine Neukundin bringt dir im Schnitt einen bestimmten Wert im Monat. Das Paket rechnet sich meist schon ab 2–3 Neukundinnen pro Monat – alles darüber ist Gewinn. Und du bist monatlich kündbar, es gibt kein Risiko.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Ich mache Social Media selbst.</summary>
+        <p>Stark – genau dann lohnt sich die Potenzialanalyse: Wir zeigen dir 3 konkrete Punkte, die du sofort verbessern kannst, kostenlos. Wenn du danach weiter selbst machst, hast du trotzdem etwas mitgenommen.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Ich habe schon eine Agentur.</summary>
+        <p>Super, dann vergleich einfach: Was bekommst du dort für welchen Preis? Unsere Kunden bekommen Content-Planung, Reels, Anfrage-System und Google-Sichtbarkeit aus einer Hand – lokal spezialisiert auf Kosmetikstudios.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Ich habe keine Zeit dafür.</summary>
+        <p>Genau dafür ist es gebaut: Du gibst uns 30 Minuten pro Monat, den Rest übernehmen wir. Weniger Zeitaufwand als jetzt, mehr Sichtbarkeit als jetzt.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Schick mir erstmal Infos.</summary>
+        <p>Machen wir – noch besser: Du bekommst deine persönliche 3-Punkte-Analyse statt eines Standard-PDFs. Dafür brauchen wir nur 2 Minuten dein Profil. Einverstanden?</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KONTAKT ===== -->
+<section id="kontakt">
+  <div class="wrap contact-wrap">
+    <div class="contact-info">
+      <span class="eyebrow">Kontakt</span>
+      <h2>Starte mit deiner kostenlosen Potenzialanalyse</h2>
+      <p>Schreib uns dein Studio, deinen Instagram-Namen oder Standort – wir melden uns mit 3 konkreten Punkten für mehr Sichtbarkeit.</p>
+      <div class="chan"><b>E-Mail:</b> <span>kontakt@kiboost-studio.de</span></div>
+      <div class="chan"><b>Instagram:</b> <span>@kiboost.studio</span></div>
+      <p style="font-size:.78rem;color:var(--muted);margin-top:18px">* Platzhalter-Kontaktdaten – bitte durch echte Adresse/Handle ersetzen.</p>
+    </div>
+    <form id="leadForm">
+      <div>
+        <label for="cStudio">Studio-Name *</label>
+        <input id="cStudio" name="studio" required placeholder="z. B. Studio Glow">
+      </div>
+      <div>
+        <label for="cOrt">Ort</label>
+        <input id="cOrt" name="ort" placeholder="Stadt">
+      </div>
+      <div>
+        <label for="cKontakt">E-Mail oder Instagram *</label>
+        <input id="cKontakt" name="kontakt" required placeholder="name@beispiel.de oder @dein.studio">
+      </div>
+      <div>
+        <label for="cNachricht">Nachricht</label>
+        <textarea id="cNachricht" name="nachricht" placeholder="Kurz zu deinem Studio oder deiner Frage"></textarea>
+      </div>
+      <button type="submit" class="btn">Kostenlose Potenzialanalyse anfragen</button>
+      <div class="form-msg" id="formMsg">Danke! Dein E-Mail-Programm öffnet sich mit deiner Anfrage – einfach senden.</div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>© <span id="year"></span> KI Boost Studio</span>
+    <span>Impressum · Datenschutz</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+const form = document.getElementById('leadForm');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const studio = document.getElementById('cStudio').value.trim();
+  const ort = document.getElementById('cOrt').value.trim();
+  const kontakt = document.getElementById('cKontakt').value.trim();
+  const nachricht = document.getElementById('cNachricht').value.trim();
+  const subject = encodeURIComponent('Potenzialanalyse-Anfrage: ' + studio);
+  const body = encodeURIComponent(
+    'Studio: ' + studio + '\n' +
+    'Ort: ' + ort + '\n' +
+    'Kontakt: ' + kontakt + '\n' +
+    'Nachricht: ' + nachricht
+  );
+  window.location.href = 'mailto:kontakt@kiboost-studio.de?subject=' + subject + '&body=' + body;
+  const msg = document.getElementById('formMsg');
+  msg.classList.add('show');
+});
+</script>
+</body>
+</html>
